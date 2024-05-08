@@ -1,1 +1,1 @@
-# Master React With me !
+# react-featured
