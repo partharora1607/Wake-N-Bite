@@ -8,6 +8,9 @@
  *
  */
 
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const h1 = React.createElement("h1", { key: 1 }, "Hello from h1 tag !");
 
 const h2 = React.createElement("h2", { key: 2 }, "Hello from h2 tag !");
