@@ -1,5 +1,24 @@
 # Master React from Zero to Hero
 
+- header
+- -logo
+- -nav items
+-
+- body
+- - search
+- - Restaurant container
+- - restaurant card
+-        -img
+-        -name
+-        -star rating
+-        -cuisine
+-        -delivery time
+-
+- footer
+- - copyright
+- - quick links
+- - address , name ,contact information
+
 # parcel
 
 - Dev Builds
