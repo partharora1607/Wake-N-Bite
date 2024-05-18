@@ -65,3 +65,24 @@ https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660
 - using this react optimises the render cycle by tracking them in dom tree / "virtual dom"
 
 - not using keys <<< index <<<<<<<<<<<<< unique id
+
+# react hooks
+ -> normal js functions written by facebook developers
+- useState() - superpowerful state variables in react
+- useEffects()
+
+# rerendering 
+
+whenever a state variable changes/updates,react rerenders the component
+
+# Reconciliation Algorithm (React Fiber)
+
+          dom1                                              dom1
+    dom1.1 dom1.2 dom1.3                            =>  dom 1,1 dom 1.3
+
+   # virtual dom -> representaion of an actual dom 
+
+# diff algorithm 
+
+- find the difference between 2 virtual doms
+

@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 const Header = () => {
+  const [auth, setAuth] = useState("login");
+
   return (
     <div className="header">
       {/* logo */}
@@ -14,6 +18,14 @@ const Header = () => {
           <li>About Us</li>
           <li>Contact Us</li>
           <li>Cart</li>
+          <button
+            className="login"
+            onClick={() => {
+              auth === "login" ? setAuth("logout") : setAuth("login");
+            }}
+          >
+            {auth}
+          </button>
         </ul>
       </div>
     </div>

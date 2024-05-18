@@ -26,8 +26,8 @@
 }
 
 .res-card {
-  width: 200px;
-  height: 350px;
+  width: 250px;
+  height: 380px;
   border: 1px solid rgb(193, 144, 240);
   border-radius: 10px;
   padding: 5px;
@@ -42,10 +42,6 @@
 .card-details {
   display: flex;
   justify-content: flex-start;
-}
-
-.search {
-  padding: 10px;
 }
 
 .res-card img {
@@ -63,4 +59,49 @@
   cursor: pointer;
   padding: 5px;
   border-radius: 4px;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-cards {
+  margin: 20px;
+  width: 250px;
+  height: 350px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.login {
+  padding: 2.5px 20px;
+  list-style: none;
+  font-weight: 600;
+  color: orangered;
+  background-color: white;
+  font-size: 15.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-btn {
+  padding: 5px;
+  margin: 10px 10px 10px -6px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.search-box {
+  padding: 5px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 400px;
 }
