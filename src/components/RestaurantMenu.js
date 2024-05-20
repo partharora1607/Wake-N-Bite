@@ -17,6 +17,7 @@ const RestautantMenu = () => {
     const data = await fetch(MENU_API + resID);
     const json = await data.json();
     setResInfo(json.data);
+    // console.log(json.data);
     // const res = json?.data?.cards[1]?.card?.card.gridElements?.infoWithStyle?.restaurants;
   };
 
@@ -24,8 +25,9 @@ const RestautantMenu = () => {
 
   const { text } = resInfo?.cards[0].card.card;
   const itemCards = resInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards;
-  console.log(resInfo);
+  const cateroriesItemCard = resInfo?.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.categories;
 
+  console.log(cateroriesItemCard);
   return (
     <div>
       <h1>{text}</h1>
@@ -38,7 +40,17 @@ const RestautantMenu = () => {
           );
         })
       ) : (
-        <h1>wait let me fix the bug </h1>
+        <div>
+          {cateroriesItemCard.map((cat, idx) => {
+            return (
+              <div>
+                {cat.itemCards.map((item) => {
+                  return <li>{item.card.info.name}</li>;
+                })}
+              </div>
+            );
+          })}
+        </div>
       )}
     </div>
   );
