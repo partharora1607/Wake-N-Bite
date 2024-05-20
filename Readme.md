@@ -59,6 +59,10 @@ https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo
 
 https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ + {cloudinaryImageId} // different for different restaurant
 
+# swiggy menu api
+
+https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.686306757634735&lng=77.13628381490707&restaurantId=804071&catalog_qa=undefined&submitAction=ENTER
+
 # key Propery
 
 - it is important tp provide the key propery for siblings in react as react uses algorithm knows as "reconsiliation"
@@ -67,11 +71,13 @@ https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660
 - not using keys <<< index <<<<<<<<<<<<< unique id
 
 # react hooks
- -> normal js functions written by facebook developers
+
+-> normal js functions written by facebook developers
+
 - useState() - superpowerful state variables in react
 - useEffects()
 
-# rerendering 
+# rerendering
 
 whenever a state variable changes/updates,react rerenders the component
 
@@ -80,9 +86,25 @@ whenever a state variable changes/updates,react rerenders the component
           dom1                                              dom1
     dom1.1 dom1.2 dom1.3                            =>  dom 1,1 dom 1.3
 
-   # virtual dom -> representaion of an actual dom 
+# virtual dom -> representaion of an actual dom
 
-# diff algorithm 
+# diff algorithm
 
 - find the difference between 2 virtual doms
 
+# Use effect called!
+
+-> useEffect is called after every render of the components
+
+-> [] dependency array is empty -> called after initial render
+-> [searchText] -> dependency array -> use effect is called after initial render + depends on search text as a state variable.
+
+# Single page application
+
+-> react is a single page application as it uses client side routing and not server site routing (getting data from a network call).
+-> therefore we are just rendering different components on different routes.
+
+# types of routing
+
+1. client side routing
+2. server side routing (network call).
