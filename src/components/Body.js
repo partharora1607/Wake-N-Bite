@@ -36,19 +36,19 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex">
+        <div className="m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid px-5 py-2 m-3 w-700"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
-            placeholder="search for restaurants and foods."
+            placeholder="search for restaurants"
           ></input>
           <button
-            className="search-btn"
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               const filteredRestaurant = listOfRestaurants.filter((res) => {
                 return res.info.name.toLowerCase().includes(searchText.toLowerCase());
@@ -59,19 +59,21 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurants.filter((res) => {
-              return res.info.avgRating > 4;
-            });
-            setSeeAllRestaurants(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="m-4 p-4">
+          <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+            onClick={() => {
+              const filteredList = listOfRestaurants.filter((res) => {
+                return res.info.avgRating > 4;
+              });
+              setSeeAllRestaurants(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {/* res card */}
         {seeAllRestaurants.map((restaurant, index) => (
           <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
