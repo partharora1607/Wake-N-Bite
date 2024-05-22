@@ -5,6 +5,8 @@ import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./shimmer";
 
+import { withOnlineLabel } from "./RestaurantCard";
+
 const Body = () => {
   const [listOfRestaurants, setListOfRestautants] = useState([]);
   const [seeAllRestaurants, setSeeAllRestaurants] = useState([]);
@@ -12,6 +14,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const onlineStatus = useOnlineStatus();
+  // console.log(seeAllRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -24,7 +27,11 @@ const Body = () => {
     const newJson = json?.data?.cards[1]?.card?.card.gridElements?.infoWithStyle?.restaurants;
     setListOfRestautants(newJson);
     setSeeAllRestaurants(newJson);
+    // console.log("newJson: " + newJson);
   };
+
+  // higher order component
+  const RestaurantCardOnline = withOnlineLabel(<RestaurantCard />);
 
   if (seeAllRestaurants?.length === 0) {
     return <Shimmer />;
@@ -74,10 +81,14 @@ const Body = () => {
         </div>
       </div>
       <div className="flex flex-wrap">
-        {/* res card */}
+        {/* res card */}.
         {seeAllRestaurants.map((restaurant, index) => (
           <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
-            <RestaurantCard resList={restaurant} />
+            {restaurant.info.Online === true ? (
+              <RestaurantCardOnline resList={restaurant} />
+            ) : (
+              <RestaurantCard resList={restaurant} />
+            )}
           </Link>
         ))}
       </div>
