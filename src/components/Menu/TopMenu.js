@@ -46,21 +46,6 @@ const TopMenu = (props) => {
               />
             );
           })}
-        </div>{" "}
-        <div>
-          <h1 className="text-3xl font-serif font-semibold w-6/12 mx-auto text-center">Menu ⚔</h1>
-          <div>
-            {itemList.map((item) => {
-              return (
-                <MainMenu
-                  key={item.card.card.title}
-                  head={item?.card?.card?.title}
-                  length={item?.card?.card?.itemCards?.length}
-                  itemCards={item?.card?.card.itemCards}
-                />
-              );
-            })}
-          </div>
         </div>
       </div>
     </>

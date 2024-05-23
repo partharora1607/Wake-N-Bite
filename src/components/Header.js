@@ -12,21 +12,18 @@ const Header = () => {
     <div className="flex justify-between shadow-lg">
       {/* logo */}
       <img className="w-1/12 pl-20" src={logo}></img>
-      <div className="font-bold justify-center text-4xl m-10 text-amber-900 font-sans">
+      <div className="font-bold justify-center text-4xl m-10 text-amber-900 font-mono">
         WakeN'Bite 🍕 - Start Fresh, Taste the Difference.
       </div>
       <div className="w-15"></div>
       <div className="flex items-center text-pink-800 font-serif font-semibold">
-        <ul className="flex p-4 m-4">
+        <ul className="flex p-4 m-4 font-mono text-g">
           <li>Online Status : {onlineStatus ? "🟢" : "🔴"}</li>
           <li className="px-10">
             <Link to="/">Home 🏡</Link>
           </li>
           <li className="px-10">
             <Link to="/about"> About 👩🏻‍💻</Link>
-          </li>
-          <li className="px-10">
-            <Link to="/contact">Contact Us 📞</Link>
           </li>
 
           <li className="px-10">Cart 🛒</li>
