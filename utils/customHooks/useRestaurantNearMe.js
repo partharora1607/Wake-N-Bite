@@ -12,7 +12,7 @@ const useRestaurantNearMe = () => {
     const data = await fetch(API);
 
     const json = await data.json();
-    console.log("web json :", json);
+    // console.log("web json :", json);
     const newJson = json?.data?.cards[1]?.card?.card.gridElements?.infoWithStyle?.restaurants;
 
     setData(newJson);

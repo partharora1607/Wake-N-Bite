@@ -6,6 +6,7 @@ import Shimmer from "./shimmer";
 import { withOnlineLabel } from "./RestaurantCard";
 import useRestaurantNearMe from "../../utils/customHooks/useRestaurantNearMe";
 import MyMind from "./OnTopBody/MyMind";
+import Footer from "./footer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestautants] = useState([]);

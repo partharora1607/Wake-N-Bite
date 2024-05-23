@@ -3,7 +3,7 @@ import MainMenu from "./MainMenu";
 
 const TopMenu = (props) => {
   const { text, cardDetails, offers, itemList, title } = props;
-  console.log(props);
+  // console.log(props);
   const { avgRating, totalRatingsString, costForTwoMessage, cuisines, locality, sla } = cardDetails;
   return (
     <>
