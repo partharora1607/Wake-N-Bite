@@ -9,6 +9,8 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestautantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/shimmer";
+import { Provider } from "react-redux";
+import appStore from "../utils/store/appStore";
 
 // lazy loading of groceries
 const Grocery = lazy(() => import("./components/grocery"));
@@ -17,10 +19,12 @@ const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 

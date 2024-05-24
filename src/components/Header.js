@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 
 import useOnlineStatus from "../../utils/customHooks/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [auth, setAuth] = useState("login");
   const onlineStatus = useOnlineStatus();
+
+  // subscribing to the store cart items
+  const cartItems = useSelector((store) => store?.cart?.items);
+  console.log(cartItems);
 
   return (
     <div className="flex justify-between shadow-lg">
@@ -26,7 +31,7 @@ const Header = () => {
             <Link to="/about"> About 👩🏻‍💻</Link>
           </li>
 
-          <li className="px-10">Cart 🛒</li>
+          <li className="px-10">🛒 Cart - {cartItems.length}</li>
 
           <button
             className="login px-10"

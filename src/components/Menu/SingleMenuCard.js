@@ -1,10 +1,19 @@
 import { useState } from "react";
 import IMAGE_URL from "../../../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../utils/store/slices/cartSlice";
 
 const SingleMenuCard = (props) => {
   // const { } = props;
   // console.log("single menu props ", props);
   const { defaultPrice, description, imageId, name, price } = props.card;
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    console.log("props.card : ", props.card);
+    dispatch(addItem(props.card));
+  };
 
   const show = props.show;
 
@@ -18,7 +27,10 @@ const SingleMenuCard = (props) => {
         </div>
         <div className="relative w-[200px] h-[200px] mx-4 py-3">
           <img className="w-full h-full object-cover" src={IMAGE_URL + imageId} alt="image" />
-          <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2 border-2 bg-white rounded-lg px-[70px] py-3 hover:bg-gray-200 font-bold text-green-500">
+          <button
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-2 border-2 bg-white rounded-lg px-[70px] py-3 hover:bg-gray-200 font-bold text-green-500"
+            onClick={handleAddToCart}
+          >
             ADD
           </button>
         </div>
