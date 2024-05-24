@@ -11,6 +11,7 @@ import RestautantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/shimmer";
 import { Provider } from "react-redux";
 import appStore from "../utils/store/appStore";
+import SeeMyCart from "./components/SeeMyCart";
 
 // lazy loading of groceries
 const Grocery = lazy(() => import("./components/grocery"));
@@ -60,6 +61,10 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <SeeMyCart />,
       },
     ],
     errorElement: <Error />,

@@ -30,9 +30,9 @@ const Header = () => {
           <li className="px-10">
             <Link to="/about"> About 👩🏻‍💻</Link>
           </li>
-
-          <li className="px-10">🛒 Cart - {cartItems.length}</li>
-
+          <Link to="/cart">
+            <li className="px-10">🛒 Cart - {cartItems.length}</li>
+          </Link>
           <button
             className="login px-10"
             onClick={() => {

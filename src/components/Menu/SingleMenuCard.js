@@ -11,7 +11,7 @@ const SingleMenuCard = (props) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    console.log("props.card : ", props.card);
+    // console.log("props.card : ", props.card);
     dispatch(addItem(props.card));
   };
 
