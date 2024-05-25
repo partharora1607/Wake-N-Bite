@@ -5,7 +5,7 @@ import { MENU_API } from "../../utils/constants";
 const useRestaurantMenu = (resID) => {
   const [resInfo, setResInfo] = useState(null);
 
-  console.log("resInfo from useRes custom hook", resInfo);
+  // console.log("resInfo from useRes custom hook", resInfo);
 
   useEffect(() => {
     fetchData();

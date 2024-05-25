@@ -13,7 +13,6 @@ const useWatsOnYourMind = () => {
     const json = await data.json();
     const newJson = json?.data?.cards[0].card?.card;
     setData(newJson);
-    // console.log(json);
   };
 
   return data;

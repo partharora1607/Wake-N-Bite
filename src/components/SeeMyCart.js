@@ -12,15 +12,14 @@ const SeeMyCart = () => {
     dispatch(clearCart());
   };
 
-  console.log(cartItems);
+  // console.log(cartItems);
   return (
     <>
       <h1 className="text-center m-4 p-4 text-3xl font-bold text-orange-400">Cart - ( {cartItems?.length} items ) </h1>
-
       <div>
         {cartItems.map((item, idx) => {
           return (
-            <>
+            <div key={idx}>
               <div
                 key={idx}
                 className="border-b-4 border-r-4 rounded-2xl w-6/12 mx-auto px-5 py-5 flex my-10 shadow-2xl"
@@ -34,7 +33,7 @@ const SeeMyCart = () => {
                   <img className="rounded-full shadow-lg" src={IMAGE_URL + item.imageId} />
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

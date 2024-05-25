@@ -68,7 +68,7 @@ const Body = () => {
             className="px-4 py-2 bg-gray-300 m-4 rounded-lg"
             onClick={() => {
               const filteredList = listOfRestaurants.filter((res) => {
-                return res.info.avgRating > 4;
+                return res.info.avgRating > 4.3;
               });
               setSeeAllRestaurants(filteredList);
             }}
